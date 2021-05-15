@@ -1,0 +1,88 @@
+*{
+    padding: 0;
+    margin: 0;
+    margin-bottom: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    background-color: rgb(97, 0, 97);
+    
+}
+h1{
+    color: aliceblue;
+    font-size: 40px;
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.face{
+    width: 540px;
+    height: 540px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 28%;
+    margin-right: 50px;
+    perspective: 1000px;
+}
+.card{
+    width:calc(25% - 10px);
+    height: calc(25% - 10px);
+    position: relative;
+    background-color: rgba(238, 130, 238, 0.459);
+    border-radius: 15px;
+    margin: 5px;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform.3s;
+}
+.card:active{
+    transform: scale(.95);
+    transition: transform.1s;
+}
+.card.flip{
+    background-color: rgb(255, 255, 255);
+    transform: rotateY(180deg);
+}
+.front:hover{
+    background-color: rgb(240, 240, 240);
+    cursor: pointer;
+    border-radius: 15px;
+}
+.back:hover{
+    background-color: rgb(240, 240, 240);
+    cursor: pointer;
+    border-radius: 15px;
+}
+.front,
+.back{
+    position: absolute;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    background-color:rgba(238, 130, 238, 0.055)
+}
+.back{
+    
+    transform: rotateY(180deg);
+}
+/*
+.back,
+.front{
+    background-color: rgb(58, 0, 55);
+    height: 110px;
+    width: 110px;
+    padding: 15px;
+    border-radius: 10px;
+    position: absolute;
+}
+
+.front:hover{
+    background-color:rgba(228, 58, 214, 0.973);
+    cursor: pointer;
+     height: 110px;
+    width: 110px;
+    border-radius: 10px;
+}
